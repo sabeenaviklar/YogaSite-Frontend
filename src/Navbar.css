@@ -1,0 +1,75 @@
+/* Navbar container */
+.navbar {
+  background-color: #784dff; /* Purple theme color */
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 10px rgba(120, 77, 255, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Links inside navbar */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #fbb040; /* Accent yellow on hover */
+}
+
+/* Button styles for logout */
+.navbar button {
+  background-color: #fbb040; /* Accent yellow */
+  border: none;
+  color: #1a1a1a;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #fbb040cc;
+  transition: background-color 0.25s ease;
+}
+
+.navbar button:hover {
+  background-color: #d6982c;
+}
+
+/* Layout adjustments */
+.navbar > * {
+  display: flex;
+  align-items: center;
+}
+
+/* Separator for non-token state links */
+.navbar > :not(:last-child):not(:nth-child(1))::after {
+  content: '|';
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 10px;
+}
+
+.navbar > :last-child::after {
+  content: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .navbar a, 
+  .navbar button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
