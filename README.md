@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+Wellness Sessions Platform
+A modern full-stack MERN (MongoDB, Express, React, Node.js) web application for managing personal and published wellness sessions (yoga, meditation, etc.) with beautiful UI, user authentication, session management, and a stylish dashboard.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+🚀 Features
+* Authentication: Login, Register with JWT-based auth
+* Session Management: Create, draft, publish, edit, delete sessions
+* Dashboard: Browse all published sessions, filter by tag, view JSON
+* My Sessions: List user’s sessions (drafts and published), quick edit/delete
+* Session Editor: Auto-save draft, manual Save & Publish, JSON URL support
+* Modern UI: Split-panel Auth, themed Navbar, card lists, illustrations
+* Responsive Design: Works on desktop & mobile
+* Backend API: Node.js + Express
+* Frontend: React (Create React App)
+* Database: MongoDB Atlas (cloud)
 
-## Available Scripts
+📁 Folder Structure
+text
+root/
+│
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── .env
+│   ├── index.js
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── HomePage.js
+│   │   │   ├── Dashboard.js
+│   │   │   ├── LoginForm.js
+│   │   │   ├── RegisterForm.js
+│   │   │   ├── Navbar.js
+│   │   │   ├── SessionEditor.js
+│   │   │   └── MySessions.js
+│   │   ├── App.js
+│   │   ├── styles.css
+│   │   └── index.js
+│   ├── .env
+│   └── package.json
+│
+└── README.md
 
-In the project directory, you can run:
+🔧 Setup & Installation
+1. Clone the repository
+bash
+git clone https://github.com/yourusername/wellness-sessions-platform.git
+cd wellness-sessions-platform
+2. Install backend dependencies
+bash
+cd backend
+npm install
+3. Configure backend environment
+Create backend/.env:
+text
+PORT=5000
+MONGO_URI=your-mongo-atlas-uri
+JWT_SECRET=your-jwt-secret
+4. Run backend locally
+bash
+npm start
+Runs backend on http://localhost:2000
+5. Install frontend dependencies
+bash
+cd ../frontend
+npm install
+6. Configure frontend environment
+Create frontend/.env:
+text
+REACT_APP_API_URL=http://localhost:2000
+7. Run frontend locally
+bash
+npm start
+Runs frontend on http://localhost:3000
 
-### `npm start`
+🌐 Deployment (Render.com example)
+* Backend: Deploy as “Web Service” with build/start commands and env vars
+* Frontend: Deploy as “Static Site” with build command (npm run build) and publish directory (build)
+* Frontend API URL: Must point to your backend Render domain
+See “How to deploy on Render.com” steps in previous answers for details!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🧑💻 Main Components (Frontend)
+* HomePage.js — Landing page (welcome, CTA, yoga illustration)
+* LoginForm.js / RegisterForm.js — Auth UI with themed layout
+* Navbar.js — Responsive top bar with routes, logout, theme colors
+* Dashboard.js — Published sessions browser, tags, JSON links, illustrations
+* MySessions.js — User’s drafts and published sessions, edit/delete buttons
+* SessionEditor.js — Create/edit/draft/publish session, auto-save, actions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🔒 API Endpoints (Backend)
+* POST /register — Create user
+* POST /login — Authenticate user
+* GET /sessions — Get all published sessions
+* GET /my-sessions — Get user’s sessions (drafts + published)
+* GET /my-sessions/:id — Get session by ID (for editing)
+* POST /my-sessions/save-draft — Create or update session draft
+* POST /my-sessions/publish — Publish session
+* DELETE /my-sessions/:id — Delete session
 
-### `npm test`
+🎨 Styling
+* Split-panel layouts for login/register and auth pages
+* Purple & yellow primary colors (#784dff, #fbb040)
+* Card-based session lists with tags and action buttons
+* Yoga/meditation illustrations from royalty-free sources
+* Custom responsive design (see styles.css)
+* Smooth transitions and modern fonts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+⚡ Quick Start (for Development)
+bash
+cd backend && npm start
+cd frontend && npm start
+* Visit http://localhost:3000 in your browser
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

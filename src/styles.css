@@ -933,7 +933,7 @@ li {
 
 
 /* dashboard */
-.dashboard-container {
+/* .dashboard-container {
   max-width: 850px;
   margin: 50px auto 18px auto;
   background: #f8f6fe;
@@ -1027,6 +1027,134 @@ li {
 .dashboard-json-link {
   display: inline-block;
   margin-top: 6px;
+  font-size: 0.94rem;
+  text-decoration: underline;
+  color: #fbb040;
+  font-weight: 500;
+  transition: color 0.18s;
+}
+.dashboard-json-link:hover {
+  color: #784dff;
+}
+
+.spinner {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 3px solid #784dffaa;
+  border-radius: 50%;
+  border-top: 3px solid #fbb040;
+  animation: spin 0.7s linear infinite;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 700px) {
+  .dashboard-container { padding: 16px 3vw; }
+  .dashboard-header { flex-direction: column; gap: 0; }
+  .dashboard-yoga-img { width: 80px; }
+  .dashboard-session-card { padding: 12px 7px; }
+} */
+
+
+.dashboard-container {
+  max-width: 850px;
+  margin: 50px auto 18px auto;
+  background: #f8f6fe;
+  box-shadow: 0 6px 32px #784dff12;
+  border-radius: 22px;
+  padding: 34px 24px 26px 24px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  gap: 24px;
+}
+
+.dashboard-header h2 {
+  color: #784dff;
+  font-size: 1.55rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.dashboard-subtitle {
+  color: #7865a9;
+  font-size: 1.07rem;
+  margin-bottom: 0;
+}
+
+.dashboard-illustration {
+  flex-shrink: 0;
+}
+
+.dashboard-yoga-img {
+  width: 120px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 14px #e9dcfb;
+}
+
+.dashboard-loading, .dashboard-empty {
+  text-align: center;
+  font-size: 1.14rem;
+  color: #784dff;
+  margin-top: 40px;
+}
+
+.dashboard-session-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-session-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px #784dff14;
+  padding: 18px 16px;
+  margin-bottom: 18px;
+  transition: box-shadow 0.2s, background 0.18s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dashboard-session-card:hover {
+  box-shadow: 0 8px 24px #784dff28;
+  background: #f4f0ff;
+}
+
+.dashboard-session-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #322052;
+  margin-bottom: 4px;
+}
+
+.dashboard-session-tags {
+  margin-top: 2px; margin-bottom: 6px;
+}
+.dashboard-tag {
+  display: inline-block;
+  background: #784dff;
+  color: #fff;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  padding: 4px 12px;
+  margin-right: 6px;
+  font-weight: 500;
+}
+
+.dashboard-json-link {
+  display: inline-block;
+  margin-top: 4px;
   font-size: 0.94rem;
   text-decoration: underline;
   color: #fbb040;
