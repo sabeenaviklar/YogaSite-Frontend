@@ -1,4 +1,4 @@
-Wellness Sessions Platform
+YogaOne Platform
 A modern full-stack MERN (MongoDB, Express, React, Node.js) web application for managing personal and published wellness sessions (yoga, meditation, etc.) with beautiful UI, user authentication, session management, and a stylish dashboard.
 
 🚀 Features
